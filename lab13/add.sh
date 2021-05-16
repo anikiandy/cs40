@@ -5,7 +5,9 @@ NUM=""
 echo -e "\t\tName to add: \c ";
 read -r NAME
 
-grep "$NAME" mybook > /dev/null
+#search for name
+grep -i "$NAME" mybook > /dev/null
+
 if [ $? = 0 ]; then
 	exit 1;
 else
