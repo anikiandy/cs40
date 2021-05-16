@@ -4,16 +4,12 @@ NAME=""
 NUM=""
 echo -e "\t\tName to add: \c ";
 read -r NAME
-
-#search for name
-grep -i "$NAME" mybook > /dev/null
-
-if [ $? = 0 ]; then
-	exit 1;
-else
-	echo -e "\t\tEnter number: \c"
-	read -r NUM
+echo -e "\t\tEnter number: \c"
+read -r NUM
+if [[ $NAME != "" ]] && [[ $NUM != "" ]]; then
 	echo "${NAME}: $NUM" >> mybook
 	exit 0;
+else 
+	exit 1;
 fi
 

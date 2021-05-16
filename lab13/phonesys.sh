@@ -19,7 +19,7 @@ case $SEL in
 			if [ $? = 0 ]; then
 				echo -e "\t\tAdded Successfully!"
 			elif [ $? = 1 ]; then
-				echo -e "\t\tEntry already exists!"
+				echo -e "\t\tInvalid Entry!"
 			fi
 			echo -e "\t\tWould you like to add another? (y/n) \c"
 			read YN;
@@ -34,10 +34,18 @@ case $SEL in
 		done
 		;;
 	"2")
-		#del
+		./del.sh
+		code=$?
+		if [ $code = 0 ]; then
+			echo -e "\t\tSuccessfuly removed entry"
+		elif [ $code = 1 ]; then
+			echo -e "\t\tEntry was not found!"
+		else
+			echo -e "\t\tInvalid Selection!"
+		fi
 		;;
 	"3")
-		#list file or entry
+		cat mybook
 		;;
 	"4")
 		#change
