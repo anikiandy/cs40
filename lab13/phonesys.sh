@@ -45,16 +45,30 @@ case $SEL in
 		fi
 		;;
 	"3")
-		cat mybook
+		SUBSEL=0
+		while [[ $SUBSEL != "1" ]] && [[ $SUBSEL != "2" ]]
+		do
+			clear;
+			echo -n "$(cat submenu)"
+			read -r SUBSEL
+		done
+		./listentry.sh $SUBSEL
+		if [ $? -ne 0 ]; then
+		       	echo -e "\t\tInvalid Entry"
+		fi
+
 		;;
 	"4")
-		#change
+		./change.sh
 		;;
 	*)
 		echo -e "\t\tInvalid Entry!"
 esac
 echo -e "\t\tEnter to continue\c"
 read >> /dev/null
+sort -f mybook >> temp
+mv temp mybook
+
 done
 
 
