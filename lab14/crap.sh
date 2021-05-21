@@ -51,7 +51,7 @@ do
 			echo -e "You  win!\nyour rolls were: ${rolls[@]}"
 			CRAPPED=1
 		elif [ $SUM = 7 ]; then 
-			echo "You lose"
+			echo -e "You lose\nyour rolls were: ${rolls[@]}"
 			CRAPPED=1
 		else
 			rolls+=( $SUM )

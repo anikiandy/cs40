@@ -14,7 +14,7 @@ clear;
 		./crap.sh
 		;;
 	2)
-		echo "doin a guess"
+		./guessing.sh
 		;;
 	3)
 		echo "doing a bj"
