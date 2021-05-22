@@ -17,7 +17,7 @@ clear;
 		./guessing.sh
 		;;
 	3)
-		echo "doing a bj"
+		bash blackjack.sh
 		;;
 esac
 fi
